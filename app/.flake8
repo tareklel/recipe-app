@@ -1,0 +1,7 @@
+[flake8]
+exclude =
+#exclude Django from linting since character limit is <=79 while django = 100
+    migrations,
+    __pycache__,
+    manage.py,
+    settings.py
