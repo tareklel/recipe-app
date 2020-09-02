@@ -1,4 +1,4 @@
-#mock django database function when db is not available
+# mock django database function when db is not available
 
 from unittest.mock import patch
 
@@ -12,7 +12,8 @@ class CommandTests(TestCase):
     def test_wait_for_db_ready(self):
         """test waiting for db when db is available"""
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
-            gi.return_value = True  # overrides return value with mock object with True value
+            # overrides return value with mock object with True
+            gi.return_value = True
             call_command('wait_for_db')
             self.assertEqual(gi.call_count, 1)
 
